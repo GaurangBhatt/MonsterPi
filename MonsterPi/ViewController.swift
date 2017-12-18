@@ -22,28 +22,25 @@ class ViewController: UIViewController {
         reverseBtn.layer.cornerRadius = 10
         
         // Forward button
-        let forwardBtnLongPress = UILongPressGestureRecognizer(target: self, action:#selector(moveForwardPressed(_:)))
-        
+        let forwardBtnLongPress = UILongPressGestureRecognizer(target: self, action:#selector(moveForwardPressed))
         forwardBtn.addTarget(self, action:#selector(moveForwardTap(_:)), for: .touchDown)
         forwardBtn.addTarget(self, action:#selector(moveForwardReleased(_:)), for: .touchUpInside)
         forwardBtn.addGestureRecognizer(forwardBtnLongPress)
         
         // Reverse Button
-        let reverseBtnLongPress = UILongPressGestureRecognizer(target: self, action:#selector(moveReversePressed(_:)))
+        let reverseBtnLongPress = UILongPressGestureRecognizer(target: self, action:#selector(moveReversePressed))
         reverseBtn.addTarget(self, action:#selector(moveReverseTap(_:)), for: .touchDown)
         reverseBtn.addTarget(self, action:#selector(moveReverseReleased(_:)), for: .touchUpInside)
         reverseBtn.addGestureRecognizer(reverseBtnLongPress)
         
         // Turn right Button
-        let rightBtnLongPress = UILongPressGestureRecognizer(target: self, action:#selector(turnRightPressed(_:)))
-        
+        let rightBtnLongPress = UILongPressGestureRecognizer(target: self, action:#selector(turnRightPressed))
         rightTurnBtn.addTarget(self, action:#selector(turnRightTap(_:)), for: .touchDown)
         rightTurnBtn.addTarget(self, action:#selector(turnRightReleased(_:)), for: .touchUpInside)
         rightTurnBtn.addGestureRecognizer(rightBtnLongPress)
         
         // Turn left Button
-        let leftBtnLongPress = UILongPressGestureRecognizer(target: self, action:#selector(turnLeftPressed(_:)))
-        
+        let leftBtnLongPress = UILongPressGestureRecognizer(target: self, action:#selector(turnLeftPressed))
         leftTurnBtn.addTarget(self, action:#selector(turnLeftTap(_:)), for: .touchDown)
         leftTurnBtn.addTarget(self, action:#selector(turnLeftRelesed(_:)), for: .touchUpInside)
         leftTurnBtn.addGestureRecognizer(leftBtnLongPress)
@@ -86,63 +83,75 @@ class ViewController: UIViewController {
     // forward button
     @IBAction func moveForwardReleased(_ sender: UIButton)
     {
-        print("moving forward released!!")
+        //print("moving forward released!!")
         invokeWebIoPI(operation: "slow_down")
     }
     
-    @IBAction func moveForwardPressed(_ sender: UIButton)
+    @IBAction func moveForwardPressed(gestureReconizer: UILongPressGestureRecognizer)
     {
-        print("moving forward pressed!!")
+        //print("moving forward pressed!!")
+        if(gestureReconizer.state == UIGestureRecognizerState.ended) {
+            invokeWebIoPI(operation: "slow_down")
+        }
     }
     
     @IBAction func moveForwardTap(_ sender: UIButton)
     {
-        print("moving forward tap!!")
+        //print("moving forward tap!!")
         invokeWebIoPI(operation: "forward")
     }
     
     // reverse button
     @IBAction func moveReverseReleased(_ sender: UIButton) {
-        print("moving reverse released!!")
+        //print("moving reverse released!!")
         invokeWebIoPI(operation: "slow_down")
     }
     
-    @IBAction func moveReversePressed(_ sender: UIButton) {
-        print("moving reverse pressed!!")
+    @IBAction func moveReversePressed(gestureReconizer: UILongPressGestureRecognizer) {
+        //print("moving reverse pressed!!")
+        if(gestureReconizer.state == UIGestureRecognizerState.ended) {
+            invokeWebIoPI(operation: "slow_down")
+        }
     }
     
     @IBAction func moveReverseTap(_ sender: UIButton) {
-        print("moving reverse tap!!")
+        //print("moving reverse tap!!")
         invokeWebIoPI(operation: "reverse")
     }
     
     // right button
     @IBAction func turnRightReleased(_ sender: UIButton) {
-        print("Turn Right Released!!")
+        //print("Turn Right Released!!")
         invokeWebIoPI(operation: "turn_completed")
     }
     
-    @IBAction func turnRightPressed(_ sender: UIButton) {
-        print("Turn Right Pressed!!")
+    @IBAction func turnRightPressed(gestureReconizer: UILongPressGestureRecognizer) {
+        //print("Turn Right Pressed!!")
+        if(gestureReconizer.state == UIGestureRecognizerState.ended) {
+            invokeWebIoPI(operation: "turn_completed")
+        }
     }
     
     @IBAction func turnRightTap(_ sender: UIButton) {
-        print("Turn Right Tap!!")
+        //print("Turn Right Tap!!")
         invokeWebIoPI(operation: "right")
     }
     
     // left button
     @IBAction func turnLeftRelesed(_ sender: UIButton) {
-        print("Turn Left Released!!")
+        //print("Turn Left Released!!")
         invokeWebIoPI(operation: "turn_completed")
     }
     
-    @IBAction func turnLeftPressed(_ sender: UIButton) {
-        print("Turn Left Pressed!!")
+    @IBAction func turnLeftPressed(gestureReconizer: UILongPressGestureRecognizer) {
+        //print("Turn Left Pressed!!")
+        if(gestureReconizer.state == UIGestureRecognizerState.ended) {
+            invokeWebIoPI(operation: "turn_completed")
+        }
     }
     
     @IBAction func turnLeftTap(_ sender: UIButton) {
-        print("Turn Left Tap!!")
+        //print("Turn Left Tap!!")
         invokeWebIoPI(operation: "left")
     }
 }

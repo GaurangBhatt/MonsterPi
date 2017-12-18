@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,62 +13,69 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Light" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MonsterPi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="yuP-fc-LQi">
-                                <rect key="frame" x="87" y="32" width="200" height="584"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="jQ5-Ps-Umj">
+                                <rect key="frame" x="88" y="183.5" width="200" height="300"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ec-0U-vpZ">
-                                        <rect key="frame" x="72" y="0.0" width="56" height="106"/>
-                                        <color key="backgroundColor" red="0.51987380530000005" green="0.68588257699999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="106" id="L0k-dg-yQv"/>
-                                            <constraint firstAttribute="width" secondItem="2Ec-0U-vpZ" secondAttribute="height" multiplier="28:53" id="niC-OX-asQ"/>
-                                        </constraints>
-                                        <state key="normal" title="Forward">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lk6-Hc-ozY">
-                                        <rect key="frame" x="71" y="156" width="58" height="106"/>
-                                        <color key="backgroundColor" red="1" green="0.59383748849999995" blue="0.49075897499999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Lk6-Hc-ozY" secondAttribute="height" multiplier="29:53" id="Nhm-aB-iPR"/>
-                                            <constraint firstAttribute="height" constant="106" id="mu3-1r-grz"/>
-                                        </constraints>
-                                        <state key="normal" title="Reverse"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNo-bz-Qy8">
-                                        <rect key="frame" x="71" y="312" width="58" height="111"/>
-                                        <color key="backgroundColor" red="1" green="0.71483799973102125" blue="0.33090315313214724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="gNo-bz-Qy8" secondAttribute="height" multiplier="58:111" id="75u-ke-jei"/>
-                                            <constraint firstAttribute="height" constant="111" id="WYX-si-MEC"/>
-                                        </constraints>
-                                        <state key="normal" title="Right"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9D-0Y-RbV">
-                                        <rect key="frame" x="72" y="473" width="56" height="111"/>
-                                        <color key="backgroundColor" red="1" green="0.41762130566580302" blue="0.65328692720922266" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="111" id="FWM-j4-8vP"/>
-                                            <constraint firstAttribute="width" secondItem="w9D-0Y-RbV" secondAttribute="height" multiplier="56:111" id="hwX-IR-me1"/>
-                                        </constraints>
-                                        <state key="normal" title="Left"/>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="dYE-OR-H2c">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ec-0U-vpZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
+                                                <color key="backgroundColor" red="0.51987380530000005" green="0.68588257699999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="7II-R7-v9T"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="vG8-RC-Qai"/>
+                                                </constraints>
+                                                <state key="normal" title="Forward">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lk6-Hc-ozY">
+                                                <rect key="frame" x="125" y="0.0" width="75" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.59383748849999995" blue="0.49075897499999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="OiK-gK-Tcb"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="ipv-vy-WHw"/>
+                                                </constraints>
+                                                <state key="normal" title="Reverse"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="J1E-Yr-xxY">
+                                        <rect key="frame" x="0.0" y="250" width="200" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9D-0Y-RbV">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.41762130566580302" blue="0.65328692720922266" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="gQz-cu-pdA"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="kZf-dm-PpS"/>
+                                                </constraints>
+                                                <state key="normal" title="Left"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNo-bz-Qy8">
+                                                <rect key="frame" x="125" y="0.0" width="75" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.71483799973102125" blue="0.33090315313214724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="Tco-pZ-lnP"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="bOO-wG-9lU"/>
+                                                </constraints>
+                                                <state key="normal" title="Right"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="PP0-eb-XCh"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="yuP-fc-LQi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ktK-vi-Cr9"/>
-                            <constraint firstItem="yuP-fc-LQi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z6f-1D-fu1"/>
+                            <constraint firstItem="jQ5-Ps-Umj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jGL-GW-ZUU"/>
+                            <constraint firstItem="jQ5-Ps-Umj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uJ4-Jm-RyX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
