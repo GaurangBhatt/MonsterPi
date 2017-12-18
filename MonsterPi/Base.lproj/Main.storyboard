@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Light" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="yuP-fc-LQi">
+                                <rect key="frame" x="87" y="32" width="200" height="584"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ec-0U-vpZ">
+                                        <rect key="frame" x="72" y="0.0" width="56" height="106"/>
+                                        <color key="backgroundColor" red="0.51987380530000005" green="0.68588257699999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="106" id="L0k-dg-yQv"/>
+                                            <constraint firstAttribute="width" secondItem="2Ec-0U-vpZ" secondAttribute="height" multiplier="28:53" id="niC-OX-asQ"/>
+                                        </constraints>
+                                        <state key="normal" title="Forward">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lk6-Hc-ozY">
+                                        <rect key="frame" x="71" y="156" width="58" height="106"/>
+                                        <color key="backgroundColor" red="1" green="0.59383748849999995" blue="0.49075897499999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Lk6-Hc-ozY" secondAttribute="height" multiplier="29:53" id="Nhm-aB-iPR"/>
+                                            <constraint firstAttribute="height" constant="106" id="mu3-1r-grz"/>
+                                        </constraints>
+                                        <state key="normal" title="Reverse"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNo-bz-Qy8">
+                                        <rect key="frame" x="71" y="312" width="58" height="111"/>
+                                        <color key="backgroundColor" red="1" green="0.71483799973102125" blue="0.33090315313214724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="gNo-bz-Qy8" secondAttribute="height" multiplier="58:111" id="75u-ke-jei"/>
+                                            <constraint firstAttribute="height" constant="111" id="WYX-si-MEC"/>
+                                        </constraints>
+                                        <state key="normal" title="Right"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9D-0Y-RbV">
+                                        <rect key="frame" x="72" y="473" width="56" height="111"/>
+                                        <color key="backgroundColor" red="1" green="0.41762130566580302" blue="0.65328692720922266" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="111" id="FWM-j4-8vP"/>
+                                            <constraint firstAttribute="width" secondItem="w9D-0Y-RbV" secondAttribute="height" multiplier="56:111" id="hwX-IR-me1"/>
+                                        </constraints>
+                                        <state key="normal" title="Left"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="PP0-eb-XCh"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yuP-fc-LQi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ktK-vi-Cr9"/>
+                            <constraint firstItem="yuP-fc-LQi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="z6f-1D-fu1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="forwardBtn" destination="2Ec-0U-vpZ" id="uFW-UE-NOu"/>
+                        <outlet property="leftTurnBtn" destination="w9D-0Y-RbV" id="2ss-IY-A8c"/>
+                        <outlet property="reverseBtn" destination="Lk6-Hc-ozY" id="ZR2-aM-lEF"/>
+                        <outlet property="rightTurnBtn" destination="gNo-bz-Qy8" id="eIY-pv-hiu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="32.833583208395808"/>
+        </scene>
+    </scenes>
+</document>
