@@ -54,21 +54,22 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func invokeWebIoPI(){
+    func invokeWebIoPI(operation: String){
         let username = "webiopi"
         let password = "raspberry"
         let loginData = String(format: "%@:%@", username, password).data(using:String.Encoding.utf8)!
         let base64LoginData = loginData.base64EncodedString()
         
         // create the request
-        let url = URL(string: "http://192.168.1.15:8000/macros/forward")!
+        let strURL = "http://raspberrypi:8000/macros/" + operation
+        let url = URL(string: strURL)!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
         
         //making the request
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
+            guard let _ = data, error == nil else {
                 print("\(String(describing: error))")
                 return
             }
@@ -86,6 +87,7 @@ class ViewController: UIViewController {
     @IBAction func moveForwardReleased(_ sender: UIButton)
     {
         print("moving forward released!!")
+        invokeWebIoPI(operation: "slow_down")
     }
     
     @IBAction func moveForwardPressed(_ sender: UIButton)
@@ -96,12 +98,13 @@ class ViewController: UIViewController {
     @IBAction func moveForwardTap(_ sender: UIButton)
     {
         print("moving forward tap!!")
-        invokeWebIoPI()
+        invokeWebIoPI(operation: "forward")
     }
     
     // reverse button
     @IBAction func moveReverseReleased(_ sender: UIButton) {
         print("moving reverse released!!")
+        invokeWebIoPI(operation: "slow_down")
     }
     
     @IBAction func moveReversePressed(_ sender: UIButton) {
@@ -110,11 +113,13 @@ class ViewController: UIViewController {
     
     @IBAction func moveReverseTap(_ sender: UIButton) {
         print("moving reverse tap!!")
+        invokeWebIoPI(operation: "reverse")
     }
     
     // right button
     @IBAction func turnRightReleased(_ sender: UIButton) {
         print("Turn Right Released!!")
+        invokeWebIoPI(operation: "turn_completed")
     }
     
     @IBAction func turnRightPressed(_ sender: UIButton) {
@@ -123,11 +128,13 @@ class ViewController: UIViewController {
     
     @IBAction func turnRightTap(_ sender: UIButton) {
         print("Turn Right Tap!!")
+        invokeWebIoPI(operation: "right")
     }
     
     // left button
     @IBAction func turnLeftRelesed(_ sender: UIButton) {
         print("Turn Left Released!!")
+        invokeWebIoPI(operation: "turn_completed")
     }
     
     @IBAction func turnLeftPressed(_ sender: UIButton) {
@@ -136,6 +143,7 @@ class ViewController: UIViewController {
     
     @IBAction func turnLeftTap(_ sender: UIButton) {
         print("Turn Left Tap!!")
+        invokeWebIoPI(operation: "left")
     }
 }
 
