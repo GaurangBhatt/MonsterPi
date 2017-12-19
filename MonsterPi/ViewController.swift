@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var rightTurnBtn: UIButton!
     @IBOutlet weak var leftTurnBtn: UIButton!
     @IBOutlet weak var reverseBtn: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,7 @@ class ViewController: UIViewController {
         rightTurnBtn.layer.cornerRadius = 10
         leftTurnBtn.layer.cornerRadius = 10
         reverseBtn.layer.cornerRadius = 10
+        stopButton.layer.cornerRadius = 10
         
         // Forward button
         let forwardBtnLongPress = UILongPressGestureRecognizer(target: self, action:#selector(moveForwardPressed))
@@ -50,6 +52,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     func invokeWebIoPI(operation: String){
         let username = "webiopi"
@@ -154,5 +157,11 @@ class ViewController: UIViewController {
         //print("Turn Left Tap!!")
         invokeWebIoPI(operation: "left")
     }
+    
+    // stop button
+    @IBAction func stopAllMotors(_ sender: UIButton) {
+        invokeWebIoPI(operation: "stop")
+    }
+    
 }
 

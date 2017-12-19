@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,8 +19,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="200" translatesAutoresizingMaskIntoConstraints="NO" id="jQ5-Ps-Umj">
-                                <rect key="frame" x="88" y="183.5" width="200" height="300"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nvs-Y1-usa">
+                                <rect key="frame" x="88" y="164" width="200" height="530"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="jQ5-Ps-Umj">
+                                <rect key="frame" x="87" y="189" width="200" height="290"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="dYE-OR-H2c">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
@@ -46,8 +50,18 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edT-n0-Wt6">
+                                        <rect key="frame" x="0.0" y="120" width="200" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.058155415100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="STOP">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="stopAllMotors:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7cb-QG-ysg"/>
+                                        </connections>
+                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="J1E-Yr-xxY">
-                                        <rect key="frame" x="0.0" y="250" width="200" height="50"/>
+                                        <rect key="frame" x="0.0" y="240" width="200" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9D-0Y-RbV">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
@@ -74,8 +88,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="jQ5-Ps-Umj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jGL-GW-ZUU"/>
-                            <constraint firstItem="jQ5-Ps-Umj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uJ4-Jm-RyX"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="nvs-Y1-usa" secondAttribute="bottom" constant="-27" id="AYR-cS-5Sp"/>
+                            <constraint firstItem="nvs-Y1-usa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H2f-9z-Jt9"/>
+                            <constraint firstItem="nvs-Y1-usa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="144" id="HF2-Is-6cr"/>
+                            <constraint firstItem="jQ5-Ps-Umj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mkz-e6-t8F"/>
+                            <constraint firstItem="nvs-Y1-usa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="NV5-0O-vap"/>
+                            <constraint firstItem="jQ5-Ps-Umj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="65" id="XaZ-hQ-Xo3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -84,6 +102,7 @@
                         <outlet property="leftTurnBtn" destination="w9D-0Y-RbV" id="2ss-IY-A8c"/>
                         <outlet property="reverseBtn" destination="Lk6-Hc-ozY" id="ZR2-aM-lEF"/>
                         <outlet property="rightTurnBtn" destination="gNo-bz-Qy8" id="eIY-pv-hiu"/>
+                        <outlet property="stopButton" destination="edT-n0-Wt6" id="VsE-pR-1CB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
